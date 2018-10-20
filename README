@@ -1,3 +1,16 @@
+
+leapstergs-buildroot is a modification of stock buildroot that adds configs for the Leapfrog LeapsterGS device, as well as
+retroarch, cores, and a menuing system.
+
+This project is currently in its beginning stages, but if you want to give it a try, you can do the following:
+
+1) Clone the source tree with git clone
+2) Run 'make leapstergs_defconfig'
+3) Run 'make'
+4) You should have 2 output files in output/images. Use these files with sshflash to write to the device.
+
+-------------------------------------------------------------------------------
+
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
