@@ -236,6 +236,7 @@ comment "Themes"
 endmenu
 
 menu "Games"
+        source "package/bunnymenu/Config.in"
 	source "package/chocolate-doom/Config.in"
 	source "package/doom-wad/Config.in"
 	source "package/flare-engine/Config.in"

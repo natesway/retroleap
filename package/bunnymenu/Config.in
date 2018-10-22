@@ -1,0 +1,8 @@
+config BR2_PACKAGE_BUNNYMENU
+        bool "bunnymenu"
+	depends on BR2_INSTALL_LIBSTDCPP
+        help
+          A lightweight emulator picker/menu.
+
+comment "Bunnymenu needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP
