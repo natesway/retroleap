@@ -200,42 +200,7 @@ F:	package/stress/
 
 N:	Asaf Kahlon <asafka7@gmail.com>
 F:	package/libuv/
-F:	package/python-attrs/
-F:	package/python-bcrypt/
-F:	package/python-bitstring/
-F:	package/python-constantly/
-F:	package/python-engineio/
-F:	package/python-fire/
-F:	package/python-h2/
-F:	package/python-idna/
-F:	package/python-incremental/
-F:	package/python-jinja2/
-F:	package/python-jsonmodels/
-F:	package/python-logbook/
-F:	package/python-lxml/
-F:	package/python-paramiko/
-F:	package/python-passlib/
-F:	package/python-ply/
-F:	package/python-priority/
-F:	package/python-py/
-F:	package/python-pyasn1/
-F:	package/python-pyasn1-modules/
-F:	package/python-pycryptodomex/
-F:	package/python-pyhamcrest/
-F:	package/python-pyopenssl/
-F:	package/python-pyqrcode/
-F:	package/python-pyroute2/
-F:	package/python-pysmi/
-F:	package/python-pytz/
-F:	package/python-reentry/
-F:	package/python-sdnotify/
-F:	package/python-subprocess32/
-F:	package/python-txtorcon/
-F:	package/python-twisted/
-F:	package/python-u-msgpack/
-F:	package/python-ubjson/
-F:	package/python-yieldfrom/
-F:	package/python-zope-interface/
+F:	package/python*
 F:	package/zeromq/
 
 N:	Ash Charles <ash.charles@savoirfairelinux.com>
@@ -925,6 +890,7 @@ F:	package/libwebsock/
 F:	package/sofia-sip/
 
 N:	Grzegorz Blach <grzegorz@blach.pl>
+F:	package/bluez5_utils-headers/
 F:	package/pigpio/
 F:	package/python-falcon/
 F:	package/python-mimeparse/
@@ -1726,6 +1692,10 @@ F:	package/lttng-tools/
 F:	package/python-ipython/
 F:	package/liburcu/
 
+N:	Pierre Crokaert <pct@crookies.net>
+F:	board/hardkernel/odroidxu4/
+F:	configs/odroidxu4_defconfig
+
 N:	Pierre Ducroquet <pinaraf@pinaraf.info>
 F:	package/kf5/
 
@@ -1822,6 +1792,9 @@ F:	package/tk/
 F:	package/upower/
 F:	package/waffle/
 F:	package/xenomai/
+F:	toolchain/toolchain-external/toolchain-external-arm-aarch64/
+F:	toolchain/toolchain-external/toolchain-external-arm-aarch64-be/
+F:	toolchain/toolchain-external/toolchain-external-arm-arm/
 
 N:	Roman Gorbenkov <roman.gorbenkov@ens2m.org>
 F:	package/davfs2/
@@ -2116,6 +2089,7 @@ F:	package/tstools/
 
 N:	Valentin Korenblit <valentinkorenblit@gmail.com>
 F:	package/clang/
+F:	package/libclc/
 F:	package/llvm/
 
 N:	Vanya Sergeev <vsergeev@gmail.com>
@@ -2133,6 +2107,9 @@ F:	package/openblas/
 F:	package/openmpi/
 F:	package/pinentry/
 F:	package/trinity/
+
+N:	Vincent Prince <vincent.prince.fr@gmail.com>
+F:	package/nss-myhostname/
 
 N:	Vincent Stehlé <vincent.stehle@laposte.net>
 F:	package/i7z/

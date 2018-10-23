@@ -62,6 +62,11 @@ check-package:
             - output/build/packages-file-list.txt
 
 .runtime_test: &runtime_test
+    # Running the runtime tests for every push is too much, so limit to
+    # explicit triggers through the API.
+    only:
+        - triggers
+        - tags
     # Keep build directories so the rootfs can be an artifact of the job. The
     # runner will clean up those files for us.
     # Multiply every emulator timeout by 10 to avoid sporadic failures in
@@ -168,6 +173,7 @@ nitrogen6x_defconfig: *defconfig
 nitrogen7_defconfig: *defconfig
 nitrogen8m_defconfig: *defconfig
 odroidc2_defconfig: *defconfig
+odroidxu4_defconfig: *defconfig
 olimex_a10_olinuxino_lime_defconfig: *defconfig
 olimex_a13_olinuxino_defconfig: *defconfig
 olimex_a20_olinuxino_lime2_defconfig: *defconfig
@@ -265,6 +271,12 @@ tests.boot.test_atf.TestATFAllwinner: *runtime_test
 tests.boot.test_atf.TestATFMarvell: *runtime_test
 tests.boot.test_atf.TestATFVexpress: *runtime_test
 tests.core.test_file_capabilities.TestFileCapabilities: *runtime_test
+tests.core.test_hardening.TestFortifyConserv: *runtime_test
+tests.core.test_hardening.TestFortifyNone: *runtime_test
+tests.core.test_hardening.TestRelro: *runtime_test
+tests.core.test_hardening.TestRelroPartial: *runtime_test
+tests.core.test_hardening.TestSspNone: *runtime_test
+tests.core.test_hardening.TestSspStrong: *runtime_test
 tests.core.test_post_scripts.TestPostScripts: *runtime_test
 tests.core.test_rootfs_overlay.TestRootfsOverlay: *runtime_test
 tests.core.test_timezone.TestGlibcAllTimezone: *runtime_test
