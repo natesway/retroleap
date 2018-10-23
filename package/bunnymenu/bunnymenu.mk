@@ -27,7 +27,7 @@ $(INSTALL) -D -m 0755 $(@D)/bunnymenu $(TARGET_DIR)/usr/bin/
 $(INSTALL) -D -m 0755 $(@D)/scripts/startnes.sh $(TARGET_DIR)/usr/bin
 $(INSTALL) -D -m 0755 $(@D)/scripts/startsnes.sh $(TARGET_DIR)/usr/bin
 $(INSTALL) -D -m 0755 $(@D)/scripts/respawn_menu.sh $(TARGET_DIR)/usr/bin
-$(INSTALL) -D -m 0755 $(@D)/scripts/S50bunnymenu $(TARGET_DIR)/etc/init.d
+$(INSTALL) -D -m 0755 $(@D)/scripts/S50bunnymenu -t $(TARGET_DIR)/etc/init.d
 endef
 
 $(eval $(generic-package))
