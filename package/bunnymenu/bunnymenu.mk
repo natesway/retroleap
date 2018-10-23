@@ -4,7 +4,7 @@
 #
 #############################################################################
 
-BUNNYMENU_VERSION = be531ecbddbf9313a152f4e023726f35343b8cb0
+BUNNYMENU_VERSION = 74606e36679cbf97acb3ba0ece68c6cf35b231ed
 BUNNYMENU_SITE = https://github.com/mac2612/bunnymenu.git
 BUNNYMENU_SITE_METHOD = git
 BUNNYMENU_LICENSE = GPLv3
@@ -24,6 +24,10 @@ $(INSTALL) -D -m 0755 $(@D)/theme/nes.png $(TARGET_DIR)/usr/share/bunnymenu
 $(INSTALL) -D -m 0755 $(@D)/theme/snes.png $(TARGET_DIR)/usr/share/bunnymenu
 $(INSTALL) -D -m 0755 $(@D)/theme/genesis.png $(TARGET_DIR)/usr/share/bunnymenu
 $(INSTALL) -D -m 0755 $(@D)/bunnymenu $(TARGET_DIR)/usr/bin/
+$(INSTALL) -D -m 0755 $(@D)/scripts/startnes.sh $(TARGET_DIR)/usr/bin
+$(INSTALL) -D -m 0755 $(@D)/scripts/startsnes.sh $(TARGET_DIR)/usr/bin
+$(INSTALL) -D -m 0755 $(@D)/scripts/respawn_menu.sh $(TARGET_DIR)/usr/bin
+$(INSTALL) -D -m 0755 $(@D)/scripts/S50bunnymenu $(TARGET_DIR)/etc/init.d
 endef
 
 $(eval $(generic-package))
