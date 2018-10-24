@@ -16,7 +16,7 @@ case "$1" in
 
 		echo "Mounting Data partition."
 
-		ubiattach /dev/ubi_ctrl -m 4
+		ubiattach /dev/ubi_ctrl -m 3
 		if [ $? != 0 ]; then
 			echo "Attaching Data UBI failed."
 			exit 1
