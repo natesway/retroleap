@@ -4,7 +4,7 @@
 #
 #############################################################################
 
-BUNNYMENU_VERSION = c180df09b8d116b11ab99c62a6f21d4e406e4b0c
+BUNNYMENU_VERSION = 996a26b302cfd956ece472c8c31afd299711ed1d
 BUNNYMENU_SITE = https://github.com/mac2612/bunnymenu.git
 BUNNYMENU_SITE_METHOD = git
 BUNNYMENU_LICENSE = GPLv3
