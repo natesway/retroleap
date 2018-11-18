@@ -3,15 +3,12 @@
 # retroarch
 #
 ################################################################################
-#RETROARCH_VERSION = 2755abc14fe25b9f32e145dcf6ec5c9569640eb8 for rpi1
 
-
-#RETROARCH_VERSION = 6690711ace3fe146d720d8755528bee8d8d87dd8 
-RETROARCH_VERSION = d7e0a9005b27a9d122825713c1d5be44879b8302
-RETROARCH_SITE = https://github.com/libretro/RetroArch.git
+RETROARCH_VERSION = v1.7.3
+RETROARCH_SITE = git://github.com/libretro/RetroArch.git
 RETROARCH_SITE_METHOD = git
 RETROARCH_LICENSE = GPLv3+
-RETROARCH_CONF_OPTS += --disable-oss --enable-zlib --disable-imageviewer --disable-shaderpipeline
+RETROARCH_CONF_OPTS += --disable-oss --enable-zlib
 RETROARCH_DEPENDENCIES = host-pkgconf
 
 ifeq ($(BR2_PACKAGE_SDL2),y)
@@ -40,6 +37,11 @@ ifeq ($(BR2_cortex_a8),y)
         RETROARCH_CONF_OPTS += --enable-neon --enable-floathard
 endif
 
+# Add dispamnx renderer for Pi
+ifeq ($(BR2_PACKAGE_RPI_FIRMWARE),y)
+	 RETROARCH_CONF_OPTS += --enable-dispmanx
+endif
+
 # odroid xu4
 ifeq ($(BR2_cortex_a15),y)
         RETROARCH_CONF_OPTS += --enable-neon --enable-floathard
@@ -47,7 +49,7 @@ endif
 
 # x86 : no option
 
-RETROARCH_CONF_OPTS += --disable-networking
+RETROARCH_CONF_OPTS += --enable-networking
 
 ifeq ($(BR2_PACKAGE_PYTHON3),y)
 RETROARCH_CONF_OPTS += --enable-python
@@ -79,6 +81,7 @@ endif
 
 ifeq ($(BR2_PACKAGE_HAS_LIBGLES),y)
 RETROARCH_CONF_OPTS += --enable-opengles
+RETROARCH_CONF_OPTS += --enable-mali_fbdev
 RETROARCH_DEPENDENCIES += libgles
 else
 RETROARCH_CONF_OPTS += --disable-opengles
@@ -135,16 +138,24 @@ define RETROARCH_CONFIGURE_CMDS
 		$(TARGET_CONFIGURE_ARGS) \
 		$(TARGET_CONFIGURE_OPTS) \
 		CFLAGS="$(TARGET_CFLAGS)" \
-		LDFLAGS="$(TARGET_LDFLAGS) -lc" \
+		LDFLAGS="$(TARGET_LDFLAGS)" \
 		CROSS_COMPILE="$(HOST_DIR)/usr/bin/" \
+		PKG_CONFIG_PATH="$(STAGING_DIR)/usr/lib/pkgconfig/" \
+		DEBUG=1 \
 		./configure \
 		--prefix=/usr \
 		$(RETROARCH_CONF_OPTS) \
 	)
 endef
 
+define RETROARCH_FIX_LIBS
+	$(SED) "s|-\([IL]\)/usr|-\1$(STAGING_DIR)/usr|g" $(@D)/config.mk
+endef
+
+RETROARCH_POST_CONFIGURE_HOOKS += RETROARCH_FIX_LIBS
+
 define RETROARCH_BUILD_CMDS
-	$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" -C $(@D) all
+	$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" DEBUG=1 -C $(@D) all
 endef
 
 define RETROARCH_INSTALL_TARGET_CMDS
@@ -167,10 +178,6 @@ ifeq ($(BR2_cortex_a8),y)
         LIBRETRO_PLATFORM += armv8 cortexa8
 endif
 
-ifeq ($(BR2_cortex_a9),y)
-	LIBRETRO_PLATFORM += armv7 cortexa9
-endif
-
 ifeq ($(BR2_x86_i586),y)
         LIBRETRO_PLATFORM = unix
 endif
@@ -187,9 +194,9 @@ ifeq ($(BR2_aarch64),y)
         LIBRETRO_PLATFORM += unix
 endif
 
-ifeq ($(BR2_GCC_TARGET_FLOAT_ABI),"hard")
-        LIBRETRO_PLATFORM += hardfloat
-endif
+#ifeq ($(BR2_GCC_TARGET_FLOAT_ABI),"hard")
+#        LIBRETRO_PLATFORM += hardfloat
+#endif
 
 ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
         LIBRETRO_PLATFORM += neon
@@ -205,3 +212,4 @@ endif
 ifeq ($(RECALBOX_SYSTEM_VERSION)),rpi3)
 	LIBRETRO_BOARD=$(RECALBOX_SYSTEM_VERSION)
 endif
+
