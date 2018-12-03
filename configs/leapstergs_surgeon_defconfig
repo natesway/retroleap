@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2018.11-git-01034-g476014d508 Configuration
+# Buildroot 2018.11-git-01034-g476014d508-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -378,7 +378,7 @@ BR2_LINUX_KERNEL_PATCH="board/leapfrog/leapstergs/leapstergs_2.6.37.patch"
 # BR2_LINUX_KERNEL_USE_DEFCONFIG is not set
 # BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG is not set
 BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
-BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/leapfrog/leapstergs/leapstergs.kconfig"
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/leapfrog/leapstergs/leapstergs_surgeon.kconfig"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES=""
 BR2_LINUX_KERNEL_CUSTOM_LOGO_PATH=""
 # BR2_LINUX_KERNEL_UIMAGE is not set
