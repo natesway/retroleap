@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2018.11-git-01026-g1da2edb31c Configuration
+# Buildroot 2018.11-git-01027-gd30b0e3fd0 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -425,7 +425,7 @@ BR2_LINUX_KERNEL_UIMAGE_LOADADDR=""
 #
 BR2_PACKAGE_BUSYBOX=y
 BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox.config"
-BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES=""
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="board/leapfrog/leapstergs/busybox.fragment"
 # BR2_PACKAGE_BUSYBOX_SHOW_OTHERS is not set
 # BR2_PACKAGE_BUSYBOX_SELINUX is not set
 # BR2_PACKAGE_BUSYBOX_INDIVIDUAL_BINARIES is not set
