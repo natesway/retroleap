@@ -35,6 +35,30 @@ https://github.com/mac2612/retroleap/releases
 9. These instructions have been tested on Ubuntu 18.04 and 18.10. If you run into trouble, please open a bug!
 
 
+Button Layout:
+On the LeapsterGS:
+-A/B/Pause/Question buttons - B/A/X/Y
+-L/R shoulders - L/R
+-Volume down/up - select/start
+-Home button - modifier key for retroarch stuff
+-Home + Question - Go back to retroarch menu when in an emulator
+-Home + vol up / down - Volume up/down
+-Home + L shoulder - Save emulator state
+-Home + R shoulder - Load emulator state
+-Power - Power off. Quick press for graceful power-off, long press for force-shutdown.
+
+Default Cores:
+
+atari800 - a tweaked atari800 emulator modified for leapster by JabberwockPL
+catsfc - SNES emulator. Performance is alright depending on the game.
+fceumm - NES emulator, good speed and fairly accurate.
+gpsp - GBA emulator. Runs well; you need to put your GBA bios at /roms/gba_bios.bin on the device (see 'Adding ROMs')
+imame4all - MAME, performance depends on the game. 
+picodrive - Genesis emulator, runs well on the games I've tried.
+pocketsnes - SNES emulator, runs some games well but slow on others.
+quicknes - NES emulator, low accuracy but very fast.
+
+
 Adding ROMs:
 
 When you attach a booted leapster device running retroleap, it will show up as a network interface.
@@ -79,11 +103,12 @@ Wishlist/planned features:
 -Overclocking support.
 -Menuing other than the retroarch rgui menuing system.
 
-
 If you'd like to get involved with this project, please get in touch! New contributors are always welcome :)
+
 
 Shoutouts/thank yous:
 -JabberwockPL (https://github.com/JabberwockPL) for being a trusted tester and collaborator, and doing cool stuff with atari800 cores, which will soon be integrated into retroleap!
+
 -Special thanks for jrspruitt (https://github.com/jrspruitt) who wrote a bunch of the low-level code to talk to leapfrog's bootloader as part of OpenLFConnect
 -The retroarch team and all the folks writing ARM-optimized cores that run so well on very dinky ARM systems (notaz especially!)
 -LeapFrog Enterprises - for making such a cool and fun to hack device, being forthcoming with GPL requests, and generally being awesome. Sorry to see you guys get bought out by VTech, your products were infinitely better engineered and better manufactured. Hopefully through this projects, some of the old Leapster devices can live on past their original lifespan.
