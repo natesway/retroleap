@@ -83,6 +83,7 @@ Wishlist/planned features:
 If you'd like to get involved with this project, please get in touch! New contributors are always welcome :)
 
 Shoutouts/thank yous:
+-JabberwockPL (https://github.com/JabberwockPL) for being a trusted tester and collaborator, and doing cool stuff with atari800 cores, which will soon be integrated into retroleap!
 -Special thanks for jrspruitt (https://github.com/jrspruitt) who wrote a bunch of the low-level code to talk to leapfrog's bootloader as part of OpenLFConnect
 -The retroarch team and all the folks writing ARM-optimized cores that run so well on very dinky ARM systems (notaz especially!)
 -LeapFrog Enterprises - for making such a cool and fun to hack device, being forthcoming with GPL requests, and generally being awesome. Sorry to see you guys get bought out by VTech, your products were infinitely better engineered and better manufactured. Hopefully through this projects, some of the old Leapster devices can live on past their original lifespan.
