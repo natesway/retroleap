@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2018.11-git-01036-g7d153fc77b Configuration
+# Buildroot 2018.11-git-01046-gcc4b7a5ab9-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -816,6 +816,7 @@ BR2_PACKAGE_LIBRETRO_FCEUMM=y
 BR2_PACKAGE_LIBRETRO_QUICKNES=y
 # BR2_PACKAGE_LIBRETRO_GLUPEN64 is not set
 # BR2_PACKAGE_LIBRETRO_SNES9X is not set
+BR2_PACKAGE_LIBRETRO_ATARI800=y
 
 #
 # Graphic libraries and applications (graphic/text)
