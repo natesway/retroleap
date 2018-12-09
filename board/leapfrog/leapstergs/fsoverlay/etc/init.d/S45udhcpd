@@ -4,7 +4,7 @@
 
 start() {
 	printf "Starting udhcpd: "
-	udhcpd /etc/udhcpd.conf
+	udhcpd -S /etc/udhcpd.conf
 	echo "done"
 }
 
