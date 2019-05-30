@@ -2,7 +2,7 @@
 
 CONFIG=/configs/retroarch.cfg.leapstergs
 
-valencia=$(dmesg | grep valencia)
+valencia=$(fbset | grep 480x272)
 if [[ $? == 0 ]]; then
     CONFIG=/configs/retroarch.cfg.leappad2
 fi
