@@ -7,6 +7,11 @@ if [[ $? == 0 ]]; then
     CONFIG=/configs/retroarch.cfg.leappad2
 fi
 
+rio=$(fbset | grep 1024x600)
+if [[ $? == 0 ]]; then
+    CONFIG=/configs/retroarch.cfg.leappadultra
+fi
+
 while `true`
 do
   echo 0 > /sys/devices/platform/lf2000-fb.0/graphics/fb0/blank
