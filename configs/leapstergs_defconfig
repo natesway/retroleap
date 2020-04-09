@@ -1,16 +1,8 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2018.11-git-01048-g979ea8fffa Configuration
+# Buildroot 2018.11-git-01059-g9fc3dac969-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
-BR2_HOST_GCC_AT_LEAST_4_5=y
-BR2_HOST_GCC_AT_LEAST_4_6=y
-BR2_HOST_GCC_AT_LEAST_4_7=y
-BR2_HOST_GCC_AT_LEAST_4_8=y
-BR2_HOST_GCC_AT_LEAST_4_9=y
-BR2_HOST_GCC_AT_LEAST_5=y
-BR2_HOST_GCC_AT_LEAST_6=y
-BR2_HOST_GCC_AT_LEAST_7=y
 BR2_HOSTARCH_NEEDS_IA32_LIBS=y
 
 #
@@ -188,7 +180,6 @@ BR2_STRIP_EXCLUDE_DIRS=""
 # BR2_OPTIMIZE_G is not set
 BR2_OPTIMIZE_S=y
 # BR2_OPTIMIZE_FAST is not set
-# BR2_GOOGLE_BREAKPAD_ENABLE is not set
 # BR2_STATIC_LIBS is not set
 BR2_SHARED_LIBS=y
 # BR2_SHARED_STATIC_LIBS is not set
@@ -372,13 +363,13 @@ BR2_LINUX_KERNEL_CUSTOM_VERSION=y
 # BR2_LINUX_KERNEL_CUSTOM_GIT is not set
 # BR2_LINUX_KERNEL_CUSTOM_HG is not set
 # BR2_LINUX_KERNEL_CUSTOM_SVN is not set
-BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE="2.6.37"
-BR2_LINUX_KERNEL_VERSION="2.6.37"
-BR2_LINUX_KERNEL_PATCH="board/leapfrog/leapstergs/leapstergs_2.6.37.patch"
+BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE="3.4.24"
+BR2_LINUX_KERNEL_VERSION="3.4.24"
+BR2_LINUX_KERNEL_PATCH="board/leapfrog/leapstergs/leapstergs_3.4.24.patch"
 # BR2_LINUX_KERNEL_USE_DEFCONFIG is not set
 # BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG is not set
 BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
-BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/leapfrog/leapstergs/leapstergs.kconfig"
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/leapfrog/leapstergs/leapstergs_3.4.24.kconfig"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES=""
 BR2_LINUX_KERNEL_CUSTOM_LOGO_PATH=""
 BR2_LINUX_KERNEL_UIMAGE=y
@@ -439,8 +430,25 @@ BR2_PACKAGE_SKELETON_INIT_SYSV=y
 #
 # Audio and video applications
 #
-# BR2_PACKAGE_ALSA_UTILS is not set
-# BR2_PACKAGE_ATEST is not set
+BR2_PACKAGE_ALSA_UTILS=y
+BR2_PACKAGE_ALSA_UTILS_ALSACONF=y
+BR2_PACKAGE_ALSA_UTILS_ACONNECT=y
+BR2_PACKAGE_ALSA_UTILS_ALSACTL=y
+# BR2_PACKAGE_ALSA_UTILS_ALSALOOP is not set
+BR2_PACKAGE_ALSA_UTILS_ALSAMIXER=y
+BR2_PACKAGE_ALSA_UTILS_ALSAUCM=y
+BR2_PACKAGE_ALSA_UTILS_ALSATPLG=y
+# BR2_PACKAGE_ALSA_UTILS_AMIDI is not set
+BR2_PACKAGE_ALSA_UTILS_AMIXER=y
+BR2_PACKAGE_ALSA_UTILS_APLAY=y
+# BR2_PACKAGE_ALSA_UTILS_APLAYMIDI is not set
+# BR2_PACKAGE_ALSA_UTILS_ARECORDMIDI is not set
+BR2_PACKAGE_ALSA_UTILS_ASEQDUMP=y
+BR2_PACKAGE_ALSA_UTILS_ASEQNET=y
+BR2_PACKAGE_ALSA_UTILS_BAT=y
+BR2_PACKAGE_ALSA_UTILS_IECSET=y
+BR2_PACKAGE_ALSA_UTILS_SPEAKER_TEST=y
+BR2_PACKAGE_ATEST=y
 # BR2_PACKAGE_AUMIX is not set
 # BR2_PACKAGE_BELLAGIO is not set
 # BR2_PACKAGE_BLUEZ_ALSA is not set
@@ -545,7 +553,10 @@ BR2_PACKAGE_PULSEAUDIO_HAS_ATOMIC=y
 BR2_PACKAGE_GDB_ARCH_SUPPORTS=y
 # BR2_PACKAGE_GDB is not set
 BR2_PACKAGE_GOOGLE_BREAKPAD_ARCH_SUPPORTS=y
-# BR2_PACKAGE_GOOGLE_BREAKPAD is not set
+
+#
+# google-breakpad requires a glibc or uClibc toolchain w/ wchar, thread, C++, gcc >= 4.8
+#
 # BR2_PACKAGE_IOZONE is not set
 # BR2_PACKAGE_KEXEC is not set
 # BR2_PACKAGE_KTAP is not set
@@ -843,7 +854,10 @@ BR2_PACKAGE_LIBRETRO_ATARI800=y
 #
 # BR2_PACKAGE_CEGUI06 is not set
 # BR2_PACKAGE_DIRECTFB is not set
-# BR2_PACKAGE_EFL is not set
+
+#
+# efl needs a toolchain w/ C++, dynamic library, gcc >= 4.7, threads, wchar
+#
 # BR2_PACKAGE_FBDUMP is not set
 # BR2_PACKAGE_FBGRAB is not set
 # BR2_PACKAGE_FB_TEST_APP is not set
@@ -897,6 +911,10 @@ BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 
 #
 # midori needs libgtk3 and a glibc toolchain w/ C++, gcc >= 6, host gcc >= 4.8
+#
+
+#
+# qt-webkit-kiosk needs a toolchain w/ dynamic library, gcc >= 4.8, host gcc >= 4.8
 #
 
 #
@@ -1126,7 +1144,10 @@ BR2_PACKAGE_HOST_MONO_ARCH_SUPPORTS=y
 BR2_PACKAGE_MONO_ARCH_SUPPORTS=y
 # BR2_PACKAGE_MONO is not set
 BR2_PACKAGE_NODEJS_ARCH_SUPPORTS=y
-# BR2_PACKAGE_NODEJS is not set
+
+#
+# nodejs needs a toolchain w/ C++, dynamic library, NPTL, gcc >= 4.8, wchar
+#
 # BR2_PACKAGE_PERL is not set
 # BR2_PACKAGE_PHP is not set
 # BR2_PACKAGE_PYTHON is not set
@@ -1738,8 +1759,14 @@ BR2_PACKAGE_CANFESTIVAL_ARCH_SUPPORTS=y
 # BR2_PACKAGE_BCTOOLBOX is not set
 # BR2_PACKAGE_BDWGC is not set
 # BR2_PACKAGE_BOOST is not set
-# BR2_PACKAGE_CAPNPROTO is not set
-# BR2_PACKAGE_CLANG is not set
+
+#
+# capnproto needs host and target gcc >= 4.8 w/ C++, threads, atomic
+#
+
+#
+# clang needs a toolchain w/ wchar, threads, C++, gcc >= 4.8, host gcc >= 4.8, dynamic library
+#
 # BR2_PACKAGE_CLAPACK is not set
 BR2_PACKAGE_CLASSPATH_ARCH_SUPPORTS=y
 # BR2_PACKAGE_CLASSPATH is not set
@@ -1780,7 +1807,6 @@ BR2_PACKAGE_LIBBSD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBCAP is not set
 # BR2_PACKAGE_LIBCAP_NG is not set
 # BR2_PACKAGE_LIBCGROUP is not set
-# BR2_PACKAGE_LIBCLC is not set
 # BR2_PACKAGE_LIBCOFI is not set
 # BR2_PACKAGE_LIBCORRECT is not set
 # BR2_PACKAGE_LIBCROCO is not set
@@ -1788,7 +1814,7 @@ BR2_PACKAGE_LIBBSD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBCSV is not set
 BR2_PACKAGE_LIBDAEMON=y
 # BR2_PACKAGE_LIBEE is not set
-# BR2_PACKAGE_LIBEV is not set
+BR2_PACKAGE_LIBEV=y
 # BR2_PACKAGE_LIBEVDEV is not set
 # BR2_PACKAGE_LIBEVENT is not set
 # BR2_PACKAGE_LIBFFI is not set
@@ -1828,7 +1854,10 @@ BR2_PACKAGE_LIBURCU_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIQUID_DSP is not set
 BR2_PACKAGE_LLVM_ARCH_SUPPORTS=y
 BR2_PACKAGE_LLVM_TARGET_ARCH="ARM"
-# BR2_PACKAGE_LLVM is not set
+
+#
+# llvm needs a toolchain w/ wchar, threads, C++, gcc >= 4.8, host gcc >= 4.8, dynamic library
+#
 # BR2_PACKAGE_LTTNG_LIBUST is not set
 # BR2_PACKAGE_MPC is not set
 # BR2_PACKAGE_MPDECIMAL is not set
@@ -1840,11 +1869,20 @@ BR2_PACKAGE_LLVM_TARGET_ARCH="ARM"
 # BR2_PACKAGE_P11_KIT is not set
 # BR2_PACKAGE_POCO is not set
 BR2_PACKAGE_PROTOBUF_ARCH_SUPPORTS=y
-# BR2_PACKAGE_PROTOBUF is not set
-# BR2_PACKAGE_PROTOBUF_C is not set
+
+#
+# protobuf needs a toolchain w/ C++, threads, dynamic library, host and target gcc >= 4.8
+#
+
+#
+# protobuf-c needs a toolchain w/ C++, threads, host gcc >= 4.8
+#
 # BR2_PACKAGE_QHULL is not set
 # BR2_PACKAGE_QLIBC is not set
-# BR2_PACKAGE_RIEMANN_C_CLIENT is not set
+
+#
+# riemann-c-client needs a toolchain w/ C++, threads, host gcc >= 4.8
+#
 # BR2_PACKAGE_SHAPELIB is not set
 # BR2_PACKAGE_SKALIBS is not set
 # BR2_PACKAGE_SPHINXBASE is not set
@@ -1865,7 +1903,10 @@ BR2_PACKAGE_PROTOBUF_ARCH_SUPPORTS=y
 # BR2_PACKAGE_AUGEAS is not set
 # BR2_PACKAGE_ENCHANT is not set
 # BR2_PACKAGE_FMT is not set
-# BR2_PACKAGE_ICU is not set
+
+#
+# icu needs a toolchain w/ C++, wchar, threads, gcc >= 4.8, host gcc >= 4.8
+#
 # BR2_PACKAGE_LIBCLI is not set
 # BR2_PACKAGE_LIBEDIT is not set
 # BR2_PACKAGE_LIBENCA is not set
@@ -2059,7 +2100,10 @@ BR2_PACKAGE_IFUPDOWN_SCRIPTS=y
 BR2_PACKAGE_MONGREL2_LIBC_SUPPORTS=y
 # BR2_PACKAGE_MONGREL2 is not set
 # BR2_PACKAGE_MONKEY is not set
-# BR2_PACKAGE_MOSH is not set
+
+#
+# mosh needs a toolchain w/ C++, threads, dynamic library, wchar, host and target gcc >= 4.8
+#
 # BR2_PACKAGE_MOSQUITTO is not set
 # BR2_PACKAGE_MROUTED is not set
 # BR2_PACKAGE_MTR is not set
@@ -2460,7 +2504,10 @@ BR2_PACKAGE_HOST_GOOGLE_BREAKPAD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_HOST_JSMIN is not set
 # BR2_PACKAGE_HOST_LPC3250LOADER is not set
 # BR2_PACKAGE_HOST_LTTNG_BABELTRACE is not set
-# BR2_PACKAGE_HOST_MFGTOOLS is not set
+
+#
+# mfgtools needs host gcc >= 4.8
+#
 # BR2_PACKAGE_HOST_MKPASSWD is not set
 # BR2_PACKAGE_HOST_MTD is not set
 # BR2_PACKAGE_HOST_MTOOLS is not set
