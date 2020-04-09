@@ -1,4 +1,5 @@
 #!/bin/sh
+BULK_PART=`awk -e '$4 ~ /"Bulk"/ {print "/dev/" substr($1, 1, length($1)-1)}' /proc/mtd`
 MOUNT_POINT=/roms
 
 case "$1" in
@@ -16,7 +17,7 @@ case "$1" in
 
 		echo "Mounting Data partition."
 
-		ubiattach /dev/ubi_ctrl -m 3
+		ubiattach /dev/ubi_ctrl -p $BULK_PART
 		if [ $? != 0 ]; then
 			echo "Attaching Data UBI failed."
 			exit 1
