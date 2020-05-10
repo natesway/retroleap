@@ -1,0 +1,2 @@
+To build a set of release images, run the do_release.sh script in the parent directory.
+This will take a long time, and releases for the lf1000, lf2000, and lf3000 will be saved here.
