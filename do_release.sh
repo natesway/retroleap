@@ -1,5 +1,11 @@
 # lf2000 surgeon
 make clean
+make lf1000_surgeon_defconfig
+make
+cp output/images/zImage release/lf1000_surgeon_zImage
+
+# lf2000 surgeon
+make clean
 make lf2000_surgeon_defconfig
 make
 cp output/images/zImage release/lf2000_surgeon_zImage
