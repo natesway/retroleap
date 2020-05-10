@@ -15,6 +15,11 @@ endef
 
 PICOPLATFORM=$(LIBRETRO_PLATFORM)
 
+# Leapster Explorer/Pollux
+ifeq ($(BR2_arm926t),y)
+  PICOPLATFORM=$(LIBRETRO_PLATFORM) armasm
+endif
+
 # RPI 0 and 1
 ifeq ($(BR2_arm1176jzf_s),y)
   PICOPLATFORM=$(LIBRETRO_PLATFORM) armasm

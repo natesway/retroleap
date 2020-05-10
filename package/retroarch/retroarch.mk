@@ -165,6 +165,9 @@ endef
 
 # DEFINITION OF LIBRETRO PLATFORM
 LIBRETRO_PLATFORM =
+ifeq ($(BR2_ARM_CPU_ARMV5),y)
+        LIBRETRO_PLATFORM += armv6
+endif
 ifeq ($(BR2_ARM_CPU_ARMV6),y)
         LIBRETRO_PLATFORM += armv6
 endif
