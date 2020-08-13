@@ -1,0 +1,8 @@
+config BR2_PACKAGE_ESP8089
+        bool "esp8089"
+        help
+          Kernel driver for the ESP8089 wireless chip contained in the ESP-12F and Didj-Fi cartridge.
+
+          esp8089 needs a Linux kernel to be built
+          https://github.com/al177/esp8089/
+          https://github.com/jkent/Didj-Fi
