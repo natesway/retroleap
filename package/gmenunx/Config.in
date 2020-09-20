@@ -1,0 +1,8 @@
+config BR2_PACKAGE_GMENUNX
+        bool "gmenunx"
+	depends on BR2_INSTALL_LIBSTDCPP
+        help
+          An emulator menu based on original work for the GP2X
+
+comment "Bunnymenu needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP
