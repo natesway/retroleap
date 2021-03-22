@@ -4,7 +4,7 @@
 #
 #############################################################################
 
-GMENUNX_VERSION = f25c8e36051809b81ab94f0dc30f8709f0b1c327
+GMENUNX_VERSION = 31361423ecf6d611ea73c771bb1cd7dda8ef5019
 GMENUNX_SITE = https://github.com/mac2612/gmenunx.git
 GMENUNX_SITE_METHOD = git
 GMENUNX_LICENSE = GPLv3
@@ -17,18 +17,8 @@ define GMENUNX_BUILD_CMDS
 endef
 
 define GMENUNX_INSTALL_TARGET_CMDS
-mkdir -p $(TARGET_DIR)/usr/share/bunnymenu/
-$(INSTALL) -D -m 0755 $(@D)/theme/background.jpg $(TARGET_DIR)/usr/share/bunnymenu/
-$(INSTALL) -D -m 0755 $(@D)/theme/mainfont.ttf $(TARGET_DIR)/usr/share/bunnymenu
-$(INSTALL) -D -m 0755 $(@D)/theme/nes.png $(TARGET_DIR)/usr/share/bunnymenu
-$(INSTALL) -D -m 0755 $(@D)/theme/snes.png $(TARGET_DIR)/usr/share/bunnymenu
-$(INSTALL) -D -m 0755 $(@D)/theme/genesis.png $(TARGET_DIR)/usr/share/bunnymenu
-$(INSTALL) -D -m 0755 $(@D)/bunnymenu $(TARGET_DIR)/usr/bin/
-$(INSTALL) -D -m 0755 $(@D)/scripts/startgenesis.sh $(TARGET_DIR)/usr/bin
-$(INSTALL) -D -m 0755 $(@D)/scripts/startnes.sh $(TARGET_DIR)/usr/bin
-$(INSTALL) -D -m 0755 $(@D)/scripts/startsnes.sh $(TARGET_DIR)/usr/bin
-$(INSTALL) -D -m 0755 $(@D)/scripts/respawn_menu.sh $(TARGET_DIR)/usr/bin
-$(INSTALL) -D -m 0755 $(@D)/scripts/S50bunnymenu -t $(TARGET_DIR)/etc/init.d
+mkdir -p $(TARGET_DIR)/usr/share/gmenunx/
+$(UNZIP) -o $(@D)/dist/gmenunx-lf1000.zip -d $(TARGET_DIR)/usr/share/gmenunx
 endef
 
 $(eval $(generic-package))
