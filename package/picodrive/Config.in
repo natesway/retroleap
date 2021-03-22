@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PICODRIVE
+        bool "picodrive"
+	depends on BR2_INSTALL_LIBSTDCPP
+        help
+          ARM-optimized megadrive emulator by notaz
+
+comment "Picodrive needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP
