@@ -1,0 +1,31 @@
+--- a/sal/linux/sal.c   2014-08-23 21:18:58.000000000 -0400
++++ b/sal/linux/sal.c	2021-03-26 23:17:17.885732356 -0400
+@@ -43,19 +43,19 @@
+ 
+ 	Uint8 type = (event.key.state == SDL_PRESSED);
+ 	switch(event.key.keysym.sym) {
+-		CASE(LCTRL, A);
+-		CASE(LALT, B);
+-		CASE(SPACE, X);
+-		CASE(LSHIFT, Y);
+-		CASE(TAB, L);
+-		CASE(BACKSPACE, R);
+-		CASE(RETURN, START);
+-		CASE(ESCAPE, SELECT);
++		CASE(b, A);
++		CASE(a, B);
++		CASE(p, X);
++		CASE(h, Y);
++		CASE(u, L);
++		CASE(d, R);
++		CASE(r, START);
++		CASE(l, SELECT);
+ 		CASE(UP, UP);
+ 		CASE(DOWN, DOWN);
+ 		CASE(LEFT, LEFT);
+ 		CASE(RIGHT, RIGHT);
+-		CASE(HOME, MENU);
++		CASE(RETURN, MENU);
+ 		default: break;
+ 	}
+ 
