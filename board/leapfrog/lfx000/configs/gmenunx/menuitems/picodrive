@@ -6,3 +6,4 @@ volume=1
 wrapper=true
 selectorbrowser=true
 selectordir=/roms/
+selectorfilter=.zip,.md
