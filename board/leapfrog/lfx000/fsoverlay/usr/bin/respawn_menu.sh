@@ -16,7 +16,11 @@ fi
 # TODO: Fix this to be more graceful across different devices etc.
 if test -f "/usr/share/gmenunx/gmenunx"
 then
-	/usr/share/gmenunx/./gmenunx
+	while `true`
+	do
+	  /usr/share/gmenunx/./gmenunx
+	  echo "Restarting gmenunx...."
+	done
 else
 
 	while `true`
