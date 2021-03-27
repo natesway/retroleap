@@ -1,0 +1,8 @@
+config BR2_PACKAGE_OHBOY
+        bool "ohboy"
+	depends on BR2_INSTALL_LIBSTDCPP
+        help
+          Gameboy/Gameboy color emulator
+
+comment "Ohboy needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP

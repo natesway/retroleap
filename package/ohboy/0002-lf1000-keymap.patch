@@ -1,0 +1,33 @@
+diff -Naur a/gui_sdl.c b/gui_sdl.c
+--- a/gui_sdl.c	2018-02-22 22:34:30.000000000 -0500
++++ b/gui_sdl.c	2021-03-25 22:20:56.860192582 -0400
+@@ -145,10 +145,10 @@
+ 		if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP){
+ 			ev->state = event.key.state == SDL_PRESSED ? GUI_PRESSED : GUI_RELEASED;
+ 			switch(event.key.keysym.sym){
+-				case SDLK_RETURN:
++				case SDLK_a:
+ 					ev->key = GUI_SELECT;
+ 					break;
+-				case SDLK_ESCAPE:
++				case SDLK_b:
+ 					ev->key = GUI_BACK;
+ 					break;
+ 				case SDLK_UP:
+diff -Naur a/main.c b/main.c
+--- a/main.c	2018-02-22 22:34:30.000000000 -0500
++++ b/main.c	2021-03-25 22:36:47.118489285 -0400
+@@ -2342,10 +2342,10 @@
+ 	rc_command("bind down +down");
+ 	rc_command("bind left +left");
+ 	rc_command("bind right +right");
+-	rc_command("bind d +a");
+-	rc_command("bind s +b");
++	rc_command("bind a +a");
++	rc_command("bind b +b");
+ 	rc_command("bind enter +start");
+-	rc_command("bind space +select");
++	rc_command("bind p +select");
+ 	rc_command("bind tab +select");
+ 	rc_command("bind joyup +up");
+ 	rc_command("bind joydown +down");
