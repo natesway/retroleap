@@ -1,0 +1,4 @@
+config BR2_PACKAGE_WARM
+        bool "warm"
+        help
+          Kernel module for cache control, needed by gpsp
