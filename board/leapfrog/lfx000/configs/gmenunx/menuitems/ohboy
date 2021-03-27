@@ -1,0 +1,9 @@
+title=OhBoy
+description=Gameboy/GBC Emulator
+icon=skin:icons/ohboy.png
+exec=/configs/ohboy/ohboy
+volume=1
+wrapper=true
+selectorbrowser=true
+selectorfilter=.zip,.gb,.gbc
+selectordir=/roms/

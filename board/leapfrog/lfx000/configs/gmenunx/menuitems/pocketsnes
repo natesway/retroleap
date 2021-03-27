@@ -1,0 +1,9 @@
+title=PocketSNES
+description=SNES Emulator
+icon=skin:icons/pocketSnes.png
+exec=/usr/bin/PocketSNES
+volume=1
+wrapper=true
+selectorbrowser=true
+selectordir=/roms/
+selectorfilter=.zip,.sfc
