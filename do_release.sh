@@ -1,4 +1,19 @@
 # TODO: Do something when one of these steps fails instead of just moving on.
+
+
+# lf1000_didj surgeon
+make clean
+make lf1000_didj_surgeon_defconfig
+make
+cp output/images/zImage release/lf1000_didj_surgeon_zImage
+
+# lf1000 main
+make clean
+make lf1000_didj_defconfig
+make
+cp output/images/zImage release/lf1000_didj_zImage
+cp output/images/rootfs.tar.gz release/lf1000_didj_rootfs.tar.gz
+
 # lf1000 surgeon
 make clean
 make lf1000_surgeon_defconfig
