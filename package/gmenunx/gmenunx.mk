@@ -4,7 +4,7 @@
 #
 #############################################################################
 
-GMENUNX_VERSION = 31361423ecf6d611ea73c771bb1cd7dda8ef5019
+GMENUNX_VERSION = 3b5233a163c206cefa5c0a4838b6bbbee1188011
 GMENUNX_SITE = https://github.com/mac2612/gmenunx.git
 GMENUNX_SITE_METHOD = git
 GMENUNX_LICENSE = GPLv3
