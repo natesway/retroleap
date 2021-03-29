@@ -13,7 +13,7 @@ GMENUNX_DEPENDENCIES = sdl sdl_image sdl_ttf
 GMENUNX_INSTALL_STAGING = NO
 
 define GMENUNX_BUILD_CMDS
-	CROSS_COMPILE="$(TARGET_CROSS)" $(MAKE) -C $(@D) -f Makefile.lf1000 zip
+	CROSS_COMPILE="$(TARGET_CROSS)" $(MAKE) -C $(@D) -f Makefile.lf1000 -j1 zip
 endef
 
 define GMENUNX_INSTALL_TARGET_CMDS
