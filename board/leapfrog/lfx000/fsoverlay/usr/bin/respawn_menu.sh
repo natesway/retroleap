@@ -18,6 +18,7 @@ if test -f "/usr/share/gmenunx/gmenunx"
 then
 	while `true`
 	do
+          # Volume control slider for Didj
 	  /usr/share/gmenunx/./gmenunx
 	  echo "Restarting gmenunx...."
 	done
