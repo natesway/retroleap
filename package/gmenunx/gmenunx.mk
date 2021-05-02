@@ -4,7 +4,7 @@
 #
 #############################################################################
 
-GMENUNX_VERSION = e616f822de5b8809ad708d6bd13729a42301bab2
+GMENUNX_VERSION = 5aa1248590713695f54fb3bfacca26cc5f487ce3
 GMENUNX_SITE = https://github.com/mac2612/gmenunx.git
 GMENUNX_SITE_METHOD = git
 GMENUNX_LICENSE = GPLv3
@@ -13,7 +13,7 @@ GMENUNX_DEPENDENCIES = sdl sdl_image sdl_ttf
 GMENUNX_INSTALL_STAGING = NO
 
 define GMENUNX_BUILD_CMDS
-	CROSS_COMPILE="$(TARGET_CROSS)" $(MAKE) -C $(@D) -f Makefile.lf1000 -j1 zip
+	CROSS_COMPILE="$(TARGET_CROSS)" $(MAKE) -C $(@D) -f Makefile.lf1000 -j1 zip debug
 endef
 
 define GMENUNX_INSTALL_TARGET_CMDS
