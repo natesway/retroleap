@@ -22,7 +22,8 @@ https://github.com/mac2612/retroleap/releases
 
 4. Extract the release file into the sshflash directory. You should now have the uImage, rootfs.ubifs, and surgeon_zImage files in your sshflash directory.
 
-5. Plug your Leapster into a USB port on your PC. Turn it on while holding the L and R shoulder buttons. Yous hould see an image of a leapster connected to a PC on the leapster's screen.
+5. Plug your Leapster into a USB port on your PC. Turn it on while holding the L and R shoulder buttons, along with the hint button. 
+You should see an image of a leapster connected to a PC on the leapster's screen. If your Leapster goes through the usual boot sequence (LeapFrog logo, boot chime) before the connected screen, you've done it wrong.
 
 6. Run sshflash:
 
@@ -30,9 +31,9 @@ https://github.com/mac2612/retroleap/releases
 
 7. Wait for sshflash to do its thing.
 
-8. If all goes well, your leapfrog device should reboot into retroarch!
+8. If all goes well, your leapfrog device should reboot into GMenu2x!
 
-9. These instructions have been tested on Ubuntu 18.04 and 18.10. If you run into trouble, please open a bug!
+9. These instructions have been tested on Ubuntu 18.04, Ubuntu 18.10, and Pop!_OS 21.04. If you run into trouble, please open a bug!
 
 
 Button Layout:
