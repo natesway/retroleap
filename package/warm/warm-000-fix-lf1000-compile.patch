@@ -1,0 +1,11 @@
+--- ./orig/warm_main.c	2022-10-22 10:10:51.000000000 +0100
++++ ./new/warm_main.c	2022-10-21 18:56:31.276681956 +0100
+@@ -640,7 +640,7 @@
+ 		return -1;
+ 	}
+ 
+-	pret->owner = THIS_MODULE;
++	//pret->owner = THIS_MODULE;
+ 	pret->proc_fops = &warm_fops;
+ 
+ 	spin_lock_init(&lock);
