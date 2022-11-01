@@ -1,5 +1,6 @@
 config BR2_PACKAGE_RETROARCH
         bool "Retroarch"
+        depends on BR2_PACKAGE_LIBRETRO_CORE_INFO
         help
           A multi emulator frontend.
 

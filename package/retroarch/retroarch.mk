@@ -9,7 +9,7 @@ RETROARCH_SITE = git://github.com/libretro/RetroArch.git
 RETROARCH_SITE_METHOD = git
 RETROARCH_LICENSE = GPLv3+
 RETROARCH_CONF_OPTS += --disable-oss --enable-zlib
-RETROARCH_DEPENDENCIES = host-pkgconf
+RETROARCH_DEPENDENCIES = host-pkgconf libretro-core-info
 
 ifeq ($(BR2_PACKAGE_SDL2),y)
 	RETROARCH_CONF_OPTS += --enable-sdl2
