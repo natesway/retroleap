@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RETROARCH_VERSION = v1.7.3
+RETROARCH_VERSION = v1.9.7
 RETROARCH_SITE = git://github.com/libretro/RetroArch.git
 RETROARCH_SITE_METHOD = git
 RETROARCH_LICENSE = GPLv3+
@@ -54,8 +54,6 @@ RETROARCH_CONF_OPTS += --enable-networking
 ifeq ($(BR2_PACKAGE_PYTHON3),y)
 RETROARCH_CONF_OPTS += --enable-python
 RETROARCH_DEPENDENCIES += python
-else
-RETROARCH_CONF_OPTS += --disable-python
 endif
 
 ifeq ($(BR2_PACKAGE_XORG7),y)
@@ -99,10 +97,7 @@ RETROARCH_DEPENDENCIES += libopenvg
 endif
 
 ifeq ($(BR2_PACKAGE_LIBXML2),y)
-RETROARCH_CONF_OPTS += --enable-libxml2
 RETROARCH_DEPENDENCIES += libxml2
-else
-RETROARCH_CONF_OPTS += --disable-libxml2
 endif
 
 ifeq ($(BR2_PACKAGE_ZLIB),y)
@@ -154,7 +149,7 @@ endef
 RETROARCH_POST_CONFIGURE_HOOKS += RETROARCH_FIX_LIBS
 
 define RETROARCH_BUILD_CMDS
-	$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" DEBUG=1 -C $(@D) all
+	$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" DEBUG=0 -C $(@D) all
 endef
 
 define RETROARCH_INSTALL_TARGET_CMDS
