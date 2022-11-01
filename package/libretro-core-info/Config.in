@@ -1,0 +1,8 @@
+config BR2_PACKAGE_LIBRETRO_CORE_INFO
+        bool "libretro-core-info"
+	depends on BR2_PACKAGE_RETROARCH
+	depends on BR2_INSTALL_LIBSTDCPP
+        help
+          Core info files for Retroarch. You need this to run cores. 
+
+	  http://www.libretro.com
