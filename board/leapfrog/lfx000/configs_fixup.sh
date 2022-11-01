@@ -13,6 +13,10 @@ if test -f "$1/usr/share/gmenunx/gmenunx"; then
 		cp board/leapfrog/lfx000/configs/gmenunx/menuitems/pocketsnes $1/.gmenunx/sections/emulators/pocketsnes
 		echo "adding pocketsnes icon"
 	fi
+        if test -f "$1/usr/bin/retroarch"; then
+                cp board/leapfrog/lfx000/configs/gmenunx/menuitems/retroarch $1/.gmenunx/sections/emulators/retroarch
+                echo "adding retroarch icon"
+        fi
 	if test -f "$1/usr/bin/ohboy"; then
 		cp board/leapfrog/lfx000/configs/gmenunx/menuitems/ohboy $1/.gmenunx/sections/emulators/ohboy
 		mkdir -p $1/configs/ohboy

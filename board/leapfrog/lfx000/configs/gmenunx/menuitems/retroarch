@@ -1,0 +1,9 @@
+title=Retroarch
+description=Multi-console emulator
+icon=skin:icons/generic.png
+exec=/usr/bin/retroarch
+params=-c /configs/retroarch.cfg.leapstergs
+clock=532
+volume=50
+wrapper=true
+selectorbrowser=false
