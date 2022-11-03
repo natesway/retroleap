@@ -5,7 +5,7 @@ CONFIG=/configs/retroarch.cfg.leapstergs
 # Really any file to indicate lf1000 will do. 
 # This will eventually need to be expanded to account for leappad1.
 # However, the config should be the same across Explorer and Didj.
-if [[ -f /sys/bus/platform/devices/lf1000-gpio ]]; then
+if [[ -f /sys/bus/platform/drivers/lf1000-gpio/bind ]]; then
     CONFIG=/configs/retroarch.cfg.lf1000
 fi
 
