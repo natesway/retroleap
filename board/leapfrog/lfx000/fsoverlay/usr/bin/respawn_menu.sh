@@ -5,7 +5,7 @@ CONFIG=/configs/retroarch.cfg.leapstergs
 # Really any file to indicate lf1000 will do. 
 # This will eventually need to be expanded to account for leappad1.
 # However, the config should be the same across Explorer and Didj.
-if [ -f /sys/bus/platform/devices/lf1000-gpio ]; then
+if [[ -f /sys/bus/platform/devices/lf1000-gpio ]]; then
     CONFIG=/configs/retroarch.cfg.lf1000
 fi
 
@@ -22,7 +22,7 @@ fi
 
 # If gmenunx is present, run it instead of retroarch.
 # TODO: Fix this to be more graceful across different devices etc.
-if [ -f "/usr/share/gmenunx/gmenunx" ] && ![ -f "/flags/boot_to_retroarch"]
+if [[ -f "/usr/share/gmenunx/gmenunx" && ! -f "/flags/boot_to_retroarch" ]];
 then
 	while `true`
 	do
@@ -34,7 +34,7 @@ else
 
 	while `true`
 	do
-	  echo 0 > /sys/devices/platform/lf2000-fb.0/graphics/fb0/blank
+	  #echo 0 > /sys/devices/platform/lf2000-fb.0/graphics/fb0/blank
 	  export SDL_NOMOUSE=1
 	  retroarch -v -c $CONFIG 2> /root/retro.log
 	  echo "Restarting program..."
