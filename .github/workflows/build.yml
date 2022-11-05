@@ -1,0 +1,20 @@
+name: CI
+on: [ push, pull_request, workflow_dispatch ]
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-18.10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: "build plugin"
+        id: latest_tag
+        run: bash do_release.sh
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+         name: Artifacts
+         path: ./release
